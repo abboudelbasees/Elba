@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Elbasees - Influential Figures</title>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Elbasees</h1>
+    <p>Discover the world of knowledge and learn about influential figures who shaped our world.</p>
+    
+    <!-- Search Bar -->
+    <input type="text" id="search" placeholder="Search for a personality..." onkeyup="searchPersonality()">
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Description of the Main Page -->
+    <section class="intro">
+      <h2>Featured Personalities</h2>
+      <p>Explore the lives and achievements of some of the most influential figures in history. Click on any name to learn more.</p>
+    </section>
+
+    <!-- Elon Musk -->
+    <section class="profile" id="elon">
+      <h2 class="name" onclick="toggleDetails('elonDetails')">Elon Musk</h2>
+      <img src="elon.jpg" alt="Elon Musk" width="250">
+      <p>Elon Musk is the founder of Tesla and SpaceX, revolutionizing space exploration and electric vehicles.</p>
+      <div class="details" id="elonDetails">
+        <h3>More About Elon Musk</h3>
+        <p>Born in 1971, Elon Musk is a visionary entrepreneur. He is working on projects like Starship and Hyperloop to revolutionize transportation and space exploration.</p>
+        <!-- Video -->
+        <video controls width="400">
+          <source src="elon-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Steve Jobs -->
+    <section class="profile" id="steve">
+      <h2 class="name" onclick="toggleDetails('steveDetails')">Steve Jobs</h2>
+      <img src="steve.jpg" alt="Steve Jobs" width="250">
+      <p>Steve Jobs co-founded Apple Inc. and is credited with revolutionizing the tech industry with products like the iPhone.</p>
+      <div class="details" id="steveDetails">
+        <h3>More About Steve Jobs</h3>
+        <p>Born in 1955, Steve Jobs introduced iconic products like the iPhone and Mac. He revolutionized the technology world before passing away in 2011.</p>
+        <!-- Video -->
+        <video controls width="400">
+          <source src="steve-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Albert Einstein -->
+    <section class="profile" id="einstein">
+      <h2 class="name" onclick="toggleDetails('einsteinDetails')">Albert Einstein</h2>
+      <img src="einstein.jpg" alt="Albert Einstein" width="250">
+      <p>Einstein developed the theory of relativity, one of the two pillars of modern physics.</p>
+      <div class="details" id="einsteinDetails">
+        <h3>More About Albert Einstein</h3>
+        <p>Born in 1879, Einstein made groundbreaking contributions to physics, including the equation E=mc². He won the Nobel Prize in Physics in 1921.</p>
+        <!-- Video -->
+        <video controls width="400">
+          <source src="einstein-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Isaac Newton -->
+    <section class="profile" id="newton">
+      <h2 class="name" onclick="toggleDetails('newtonDetails')">Isaac Newton</h2>
+      <img src="newton.jpg" alt="Isaac Newton" width="250">
+      <p>Newton is known for formulating the laws of motion and the law of universal gravitation.</p>
+      <div class="details" id="newtonDetails">
+        <h3>More About Isaac Newton</h3>
+        <p>Born in 1642, Isaac Newton made groundbreaking discoveries in physics and mathematics. He is famous for formulating the laws of motion and the law of universal gravitation.</p>
+        <!-- Video -->
+        <video controls width="400">
+          <source src="newton-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- Nikola Tesla -->
+    <section class="profile" id="tesla">
+      <h2 class="name" onclick="toggleDetails('teslaDetails')">Nikola Tesla</h2>
+      <img src="tesla.jpg" alt="Nikola Tesla" width="250">
+      <p>Tesla pioneered the development of alternating current electrical systems, influencing modern power distribution.</p>
+      <div class="details" id="teslaDetails">
+        <h3>More About Nikola Tesla</h3>
+        <p>Born in 1856, Tesla's work led to many innovations, including the development of alternating current (AC) electricity, the induction motor, and wireless communication.</p>
+        <!-- Video -->
+        <video controls width="400">
+          <source src="tesla-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+  <p>&copy; 2024 Your Website. All rights reserved.</p>
+  <p><a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+
+  <script>
+    function searchPersonality() {
+      const searchInput = document.getElementById("search").value.toLowerCase();
+      const profiles = document.querySelectorAll(".profile");
+
+      profiles.forEach(profile => {
+        const name = profile.querySelector("h2").textContent.toLowerCase();
+        if (name.includes(searchInput)) {
+          profile.style.display = "block";
+        } else {
+          profile.style.display = "none";
+        }
+      });
+    }
+
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
